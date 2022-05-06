@@ -1,8 +1,18 @@
 document.getElementById("btnCreateResume").addEventListener('click',myResume)
     function myResume()
     {
-        variableName = document.getElementById("birthday").value;
-       alert("Show Resume: " + variableName);
+        fname = document.getElementById("fname").value;
+        lname = document.getElementById("lname").value;
+
+        fullName = `${fname} ${lname}`;
+        resumeTitle = `${fullName} Resume`;
+
+        html = ("<html>\n<head>\n<title>Welcome</title>\n</head>\n<body>\n");
+        html += (`Hello ${fullName}, this page was created on-the-fly!`);
+        html += ("</body>\n</html>");
+    
+        resumeWindow = window.open('Resume','myPop','width=400,height=200,left=200,top=200');
+        resumeWindow.document.write(html);
     }
 
     var acc = document.getElementsByClassName("accordion");

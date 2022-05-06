@@ -38,8 +38,13 @@
         <button class="accordion">Skills</button>
         <div class="panel">
             <p>Please enter appropriate skills.</p>
-            <label for="work ethic">Work Ethic:</label>
-            <input type="text" id="Work Ethic" name="Work Ethic"><br><br>
+            <label for="workEthic">Work Ethic:</label>
+            <textarea 
+                id="workEthic" 
+                name="workEthic"
+                rows="4" 
+                cols="50"></textarea>
+           <br><br>
         </div>
 
         <button class="accordion">Technical Skills</button>
@@ -52,26 +57,28 @@
         <button class="accordion">Employment History</button>
         <div class="panel">
             <p>Dates of Employment</p>
-            <label for="birthday">Birthday:</label>
-            <input type="date" id="birthday" name="birthday"><br><br>
-
+            <label for="date">Date:</label>
+            <textarea 
+                type="date" 
+                id="date" 
+                name="Date" 
+                rows="4" 
+                cols="50"></textarea>
+            <br><br>
         </div>
 
         <button class="accordion">Education</button>
         <div class="panel">
-            <p>Dates of Employment</p>
             <label for="education">Education:</label>
-            <input type="text" id="Education" name="Education"><br><br>
+            <textarea type="text" id="education" name="education" rows="4" cols="50"></textarea><br><br>
 
-            <label for="birthday">Birthday:</label>
-            <input type="date" id="birthday" name="birthday"><br><br>
-
+            <label for="date">Date:</label>
+            <input type="date" id="date" name="date"><br><br>
         </div>
 
         <label for="email">Email:</label>
         <input type="text" id="Email" name="Email"><br><br>
 
-        
         <button type="button" id="btnCreateResume" name="btnCreateResume">Create Resume</button>
 
     </form>
