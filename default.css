@@ -35,6 +35,17 @@ label {
     padding-right: 1em;
     float: left;
 }
+label.error{
+    color: red;
+    font-weight: bolder;
+}
+#errorMessage{
+    color: red;
+    font-weight: bold;
+    margin:auto;
+    text-align: center;
+    background: yellow;
+}
 input {
     display: block;
     width: 15em;

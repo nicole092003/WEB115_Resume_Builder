@@ -5,6 +5,37 @@ var $ = function (id) {
 var $get = function(id) {
     return document.getElementById(id).value;
 }
+function ValidateEmail(input) {
+
+    var validRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+  
+    if (input.value.match(validRegex)) {
+  
+      alert("Valid email address!");
+  
+      document.form1.text1.focus();
+  
+      return true;
+  
+    } else {
+  
+      alert("Invalid email address!");
+  
+      document.form1.text1.focus();
+  
+      return false;
+  
+    }
+  
+  }
+
+  function validEmail(string) {
+      if (string.length > 0) {
+          return true;
+      }
+      return false;
+
+  }
 
  function testResumeHeadings() {
     var html = "";
@@ -25,6 +56,24 @@ var $get = function(id) {
 document.getElementById("btnCreateResume").addEventListener('click',myResume)
     function myResume()
     {
+        email = $get("email");
+        var emailLabel = $("email").parentNode.querySelector("label[for='email']");
+
+        if(!validEmail(email)){
+            if (!emailLabel.classList.contains("error")){
+                emailLabel.classList.add("error");
+            }
+            $("email").focus();
+            $("errorMessage").innerHTML = "Error: enter a valid email address";
+            alert("enter a valid email address");
+            return;
+        }
+
+        if (emailLabel.classList.contains("error")){
+            emailLabel.classList.remove("error");    
+        }
+        $("errorMessage").innerHTML = "";
+
         fname = $get("fname");
         lname = $get("lname");
         address = $get("address");
@@ -33,7 +82,7 @@ document.getElementById("btnCreateResume").addEventListener('click',myResume)
         zip = $get("zip");
         phone = $get("phone");
         homepage = $get("homepage");
-
+       
         fullName = `${fname} ${lname}`;
         resumeTitle = `${fullName} Resume`;
 
@@ -43,35 +92,10 @@ document.getElementById("btnCreateResume").addEventListener('click',myResume)
         html += testResumeHeadings();
         html += ("</body>\n</html>");
     
-        resumeWindow = window.open('Resume~','myPop','width=400,height=200,left=200,top=200');
+        resumeWindow = window.open('Resume','myPop','width=400,height=200,left=200,top=200');
         resumeWindow.document.write(html);
     }
-/**
- * <div class="panel">
-            <label for="fname">First name:</label>
-            <input type="text" id="fname" name="fname"><br><br>
-    
-            <label for="lname">Last name:</label>
-            <input type="text" id="lname" name="lname"><br><br>
-    
-            <label for="address">Address</label>
-            <input type="text" id="address" name="address"><br><br>
-    
-            <label for="city">City:</label>
-            <input type="text" id="City" name="City"><br><br>
-    
-            <label for="state">State:</label>
-            <input type="text" id="State" name="State"><br><br>
-    
-            <label for="zip">Zip:</label>
-            <input type="text" id="Zip" name="Zip"><br><br>
-    
-            <label for="phone">Phone:</label>
-            <input type="text" id="Phone" name="Phone"><br><br>
-    
-              
-        </div>
- */
+
     var acc = document.getElementsByClassName("accordion");
     var i;
     
