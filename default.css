@@ -106,3 +106,14 @@ button {
     overflow: hidden;
     transition: max-height 0.2s ease-out;
   }
+  .column {
+    float: left;
+    width: 50%;
+    padding: 10px;
+    height: 300px;
+  }
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
