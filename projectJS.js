@@ -1,13 +1,13 @@
-var $ = function (id) {
+let $ = function (id) {
     return document.getElementById(id);
 }
 
-var $get = function(id) {
+let $get = function(id) {
     return document.getElementById(id).value;
 }
 
 function validEmail(string) {
-    var validRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+    let  validRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
     if (string.length > 0 && string.match(validRegex) ) {
         return true;
     }
@@ -15,7 +15,7 @@ function validEmail(string) {
 }
 
  function testResumeHeadings() {
-    var html = "";
+    let html = "";
     html += ("fullName: " + fullName+ "<br>");
     html += ("fname: " + fname+ "<br>");
     html += ("lname: " + lname+ "<br>");
@@ -31,7 +31,7 @@ function validEmail(string) {
  }
 
  function getResume() {
-    var html = '';
+    let html = '';
     html += '<!DOCTYPE html>';
     html += '<html>';
         html += '<title>W3.CSS Template</title>';
@@ -177,7 +177,7 @@ document.getElementById("btnCreateResume").addEventListener('click',myResume)
     function myResume()
     {
         email = $get("email");
-        var emailLabel = $("email").parentNode.querySelector("label[for='email']");
+        let emailLabel = $("email").parentNode.querySelector("label[for='email']");
 
         if(!validEmail(email)){
             if (!emailLabel.classList.contains("error")){
