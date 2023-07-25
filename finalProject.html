@@ -11,6 +11,9 @@
     <form>
         <button class="accordion">Resume Heading</button>
         <div class="panel">
+            <label for="title">Title:</label>
+            <input type="text" id="title" name="title"><br><br>
+
             <label for="fname">First name:</label>
             <input type="text" id="fname" name="fname"><br><br>
     
@@ -39,30 +42,115 @@
         <button class="accordion">Skills</button>
         <div class="panel">
             <p>Please enter appropriate skills.</p>
-            <label for="workEthic">Work Ethic:</label>
+            <label for="codingSkills">Coding Skills:</label>
             <textarea 
-                id="workEthic" 
-                name="workEthic"
+                id="codingSkills" 
+                name="codingSkills"
                 rows="4" 
                 cols="50"></textarea>
            <br><br>
+           
+           <label for="workEthic">Work Ethic:</label>
+           <textarea 
+               id="workEthic" 
+               name="workEthic"
+               rows="4" 
+               cols="50"></textarea>
+          <br><br>
+          <label for="writingSkills">Writing Skills:</label>
+          <textarea 
+              id="writingSkills" 
+              name="writingSkills"
+              rows="4" 
+              cols="50"></textarea>
+         <br><br>
+          
         </div>
 
         <button class="accordion">Technical Skills</button>
         <div class="panel">
             <p>Please enter technical skills.</p>
-            <label for="coding skills">Coding Skills:</label>
-            <input type="text" id="Coding Skills" name="Coding Skills"><br><br>
+            <label for="languages">Languages:</label>
+            <textarea  
+            id="languages" 
+            name="languages"
+            rows="4"
+            cols="50"></textarea>
+            <br><br>
+
+            <label for="tools">Tools:</label>
+            <textarea  
+            id="tools" 
+            name="tools"
+            rows="4"
+            cols="50"></textarea>
+            <br><br>
         </div>
 
         <button class="accordion">Employment History</button>
         <div class="panel">
             <p>Dates of Employment</p>
-            <label for="date">Date:</label>
+            <label for="employment1">Employer 1</label>
+            <input type="text" id="employment1" name="employment1"><br><br>
+
+            <label for="dateFrom1">From Date :</label>
             <textarea 
                 type="date" 
-                id="date" 
-                name="Date" 
+                id="dateFrom1" 
+                name="dateFrom1" 
+                rows="4" 
+                cols="50"></textarea>
+            <br><br>
+
+            <label for="dateTo1">To Date :</label>
+            <textarea 
+                type="date" 
+                id="dateTo1" 
+                name="dateTo1" 
+                rows="4" 
+                cols="50"></textarea>
+            <br><br>
+           <hr>
+
+            <label for="employment2">Employer 2</label>
+            <input type="text" id="employment2" name="employment2"><br><br>
+
+            <label for="dateFrom2">From Date :</label>
+            <textarea 
+                type="date" 
+                id="dateFrom2" 
+                name="dateFrom2" 
+                rows="4" 
+                cols="50"></textarea>
+            <br><br>
+
+            <label for="dateTo2">To Date :</label>
+            <textarea 
+                type="date" 
+                id="dateTo2" 
+                name="dateTo2" 
+                rows="4" 
+                cols="50"></textarea>
+            <br><br>
+            <hr>
+
+            <label for="employment3">Employer 3</label>
+            <input type="text" id="employment3" name="employment3"><br><br>
+
+            <label for="dateFrom3">From Date :</label>
+            <textarea 
+                type="date" 
+                id="dateFrom3" 
+                name="dateFrom3" 
+                rows="4" 
+                cols="50"></textarea>
+            <br><br>
+
+            <label for="dateTo3">To Date :</label>
+            <textarea 
+                type="date" 
+                id="dateTo3" 
+                name="dateTo3" 
                 rows="4" 
                 cols="50"></textarea>
             <br><br>
@@ -72,14 +160,12 @@
         <div class="panel">
             <label for="education">Education:</label>
             <textarea type="text" id="education" name="education" rows="4" cols="50"></textarea><br><br>
-
-            <label for="date">Date:</label>
-            <input type="date" id="date" name="date"><br><br>
         </div>
 
         <label for="email">Email:</label>
-        <input type="text" id="Email" name="Email"><br><br>
+        <input type="email" id="email" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$"><br><br>
 
+        <div id="errorMessage"></div>
         <button type="button" id="btnCreateResume" name="btnCreateResume">Create Resume</button>
 
     </form>
